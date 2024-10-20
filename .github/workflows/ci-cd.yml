@@ -1,0 +1,19 @@
+
+name: CI Pipeline
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment.yml
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+    - name: Lint with flake8
+      run: flake8 src/
+    - name: Run Tests
+      run: pytest tests/
+    - name: Security Check with Bandit
+      run: bandit -r src/

@@ -1,0 +1,18 @@
+
+name: ml-logging-system
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - mlflow==1.21.0
+    - pytest==6.2.5
+    - pre-commit==2.17.0
+    - black==22.3.0
+    - flake8==4.0.1
+    - sphinx==4.5.0
+    - sphinx_rtd_theme==1.0.0
+    - bandit==1.7.0
+    - safety==1.10.3
